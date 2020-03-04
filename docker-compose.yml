@@ -1,0 +1,22 @@
+version: '2'
+services:
+    go-service:
+        build:
+            context: ./docker-config
+            dockerfile: go-extension
+        container_name: go-service
+        ports: 
+            - '8080:8080'
+        networks:
+            go_nett:
+                ipv4_address: 4.2.1.2
+        volumes:
+            - '.:/app/:rw'
+        mem_limit: 300m
+            
+networks:
+    go_nett:
+        ipam:
+            driver: default
+            config: 
+                - subnet: 4.2.1.0/24
