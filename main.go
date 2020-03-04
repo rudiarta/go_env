@@ -20,5 +20,5 @@ func main() {
 
 // createTodo add a new todo
 func createTodo(c *gin.Context) {
-	c.JSON(http.StatusCreated, gin.H{"message": "Todo item created successfully!", app.test: 1})
+	c.JSON(http.StatusCreated, gin.H{"message": "Todo item created successfully!", "Id": 1})
 }
