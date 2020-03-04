@@ -1,4 +1,4 @@
 FROM golang:1.14-stretch
 WORKDIR /app
 EXPOSE 8080
-CMD [ "go", "run", "main.go"]
+CMD [ "make", "install"]
