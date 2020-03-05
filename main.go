@@ -2,7 +2,7 @@ package main
 
 import (
 	"net/http"
-	"github.com/rudirahardian/go_env/route"
+	"github.com/rudirahardian/go_env/app/routes"
 	"github.com/gin-gonic/gin"
 )
 
@@ -21,5 +21,5 @@ func main() {
 
 // createTodo add a new todo
 func createTodo(c *gin.Context) {
-	c.JSON(http.StatusCreated, gin.H{"message": "Todo item created successfully!", route.Test: 1})
+	c.JSON(http.StatusCreated, gin.H{"message": "Todo item created successfully!", routes.Test: 1})
 }
