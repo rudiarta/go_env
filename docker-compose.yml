@@ -6,7 +6,7 @@ services:
             dockerfile: go-extension
         container_name: go-service
         ports: 
-            - '8080:8080'
+            - ${PORT}:${PORT}
         networks:
             go_nett:
                 ipv4_address: 4.2.1.2

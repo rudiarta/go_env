@@ -1,18 +1,18 @@
 package routes
 
 import (
-	"github.com/rudirahardian/go_env/app/controller"
+	"github.com/rudirahardian/go_env/app/controller/test"
 	"github.com/gin-gonic/gin"
 )
 
-func RouteInit(){
+func RouteInit(port string){
 	// gin.SetMode(gin.ReleaseMode)
 	gin.SetMode(gin.DebugMode)
 	router := gin.Default()
 
 	v1User := router.Group("/api/v1/user")
-	v1User.GET("/wait", controller.UserWait)
-	v1User.GET("/new", controller.UserNew)
+	v1User.GET("/wait", test.UserWait)
+	v1User.GET("/new", test.UserNew)
 	
-	router.Run()
+	router.Run(":"+port)
 }
