@@ -3,10 +3,15 @@ package controller
 import (
 	"net/http"
 	"github.com/gin-gonic/gin"
+	"github.com/rudirahardian/go_env/app/service"
 )
 
 func V1UserWait(c *gin.Context) {
-	c.JSON(http.StatusCreated, gin.H{"message": "V1 Todo item created successfully!", "rudi": 1})
+	var user service.User
+	user.Name = "asd"
+	user.Age = 12
+	var hasil = service.Ambil(user)
+	c.JSON(http.StatusCreated, gin.H{"message": "V1 Todo item created successfully!", "rudi": hasil.GetUser()})
 }
 
 func V1UserNew(c *gin.Context) {
